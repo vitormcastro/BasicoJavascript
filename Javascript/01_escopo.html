@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escopo Javascript</title>
 </head>
+
 <body>
     <script>
-        console.log(name,'Hello')
-        var name = 'maycon'
-        var name = 'batista'
-        var name = 'alves'
+        //Variaveis são usada para instancial variavies primitivas, objetos e functions
+        //Observação: não precisa de /;/ no final de cada linha de código, porém observar qual a prática que é utilizada pelo projeto.
+
+        var name1 = "Vitor" //Ele é uma variavel global, <Duvidoso> quando roda o projeto ela é transportada para o topo do script. <duvidoso>
+        console.log(name1)
+
+        let name2 = "Marques" //Ela é local, nascendo e morrendo quando termina o escopo que ela se encontra.
+        {
+            let name2 = "de" //Caso outra variavel local com o mesmo nome seja chamada, desde que elas não estejam no mesmo escopo, mesmo que este escopo esteja dentro do outro, ele vai chamar a variavel local do escopo interno.
+            console.log(name2)
+        }
+        console.log(name2)
+
+        const name3 = "Castro" //ela é uma variavel local e constante, apos isntanciar seu valor, não pdoerá ser trocado.        
+
+        const obj1 = { // Contudo, se for um objeto, ele poderá atualizar os valores de suas propriedades.
+            name: "Vitor",
+            sobrenome: "Castro"
+        }
+        console.log(obj1)
+        obj1.name = "Castro"
+        console.log(obj1)
+        Object.freeze(obj1) //Mas se você utilizar object freeze, ele impedirá que as propriedades do objeto seja atualizada (funciona para qualquer objeto, não apenas para objeto instanciado em const)
+        obj1.name = "Marques"
+        console.log(obj1)
+
+        const data = function dataAniversario(){ //Usando o exemplo para instancia uma function
+            console.log(name1)
+        }
+
+        data() //Chamando a function
+
     </script>
 </body>
+
 </html>
