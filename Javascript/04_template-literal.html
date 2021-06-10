@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Template literal</title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        const person = {
+            name: 'Vitor',
+            lastName: 'Castro'
+        }
+
+
+        const nomeCompleto = `Meu nome é ${person.name} ${person.lastName}`
+        console.log(nomeCompleto)
+
+        const courses = ['Javascript','Java','Ruby','Go']
+
+        const tagTemplate = `
+            <ul>
+                ${
+                    courses.map(courses => `<li>${courses}</li>`).join(' ')
+                }
+            </ul>
+        `
+
+        const body = document.querySelector('div')
+        body.innerHTML = tagTemplate
+
+    </script>
+</body>
+</html>

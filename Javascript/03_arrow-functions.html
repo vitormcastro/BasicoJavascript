@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow functions</title>
+</head>
+<body>
+    <button class="btn">Confirmar</button>
+    <script>
+        const values = {
+            firstNumber: 10,
+            secondNumber: 20,
+
+            showValues: function(){
+                return `Primeiro numero: ${this.firstNumber} Segundo numero: ${this.secondNumber}`
+            },
+            callShowValues: function(){
+                window.setTimeout(()=>{  //Arrow function utilizado dentro de uma function de um objeto, seu this será do objeto.
+                    console.log(this.showValues())
+                }, 2000)
+            }
+        }
+
+        const btn = document.querySelector('.btn')
+        btn.addEventListener('click',function(){
+            values.callShowValues()
+        })
+    </script>
+</body>
+</html>

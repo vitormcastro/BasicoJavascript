@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Example</title>
+</head>
+<body>
+    <script>
+        function sum(){
+            console.log(this) // This usado dentro de function vai retornar o window.
+        }
+
+        const person = {
+            name: "John",
+            walk: function(){
+                console.log(this) // this usado dentro de uma function de um objeto vai retornar o objeto
+            },
+            walkAction: ()=>{
+                console.log(this) // this usado dentro de uma arrow function de um objeto via retornar o window
+            }
+        }
+
+        sum()
+        person.walk()
+        person.walkAction()
+    </script>
+</body>
+</html>

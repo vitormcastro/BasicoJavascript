@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow functions</title>
+</head>
+
+<body>
+
+    <script>
+
+        ((var1 = 1, var2 = 2) => { //arrow function usada para quando começar a rodar o script ele faz esse function 
+
+            console.log(var1 + var2)
+
+        })()
+
+        function sum(num1, num2) {
+            if(num1 == num2){ //== compara se os valores são iguais indenpendente seja seu tipo
+                console.log(num1 + num2)
+            }
+            else{
+                console.log('Valores dos num é diferente ==')
+            }
+            if(num1 === num2){ //=== compara se os valores são iguais e são do mesmo tipo.
+                console.log(num1 + num2)
+            }
+            else{
+                console.log('Valores dos num é diferente ===')
+            }
+        }
+
+        const arrowSum = (num1, num2) => { //Arrow function é como fosse uma function anonima
+            return num1 + num2
+        }
+
+        const arrowSumOneLine = (num1, num2) => num1 + num2 //Arrow function caso so tenha uma linha de código, você pode dispensar as chaves e colocar tudo na mesma linha 
+
+        const hello = name => console.log(`Hello ${name}`) //Arrow function caso só tenha um parametro, você pode coloca o parametro sem parentese
+
+        console.log(arrowSumOneLine(2, 2))
+
+        hello('Vitor')
+
+        sum('1',1)
+
+    </script>
+</body>
+
+</html>
