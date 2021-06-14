@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread and rest operator</title>
+</head>
+
+<body>
+    <script>
+
+        //Diferença entre os dois está apenas onde utiliza, pois a sentença de uso é a mesma /.../
+
+        //Exemplo usando o Spread operator
+        const numbers = [1, 2, 3, 8, 5]
+
+        console.log([...numbers, 6, 7, 8, ...numbers]) //utilizando-o para interar o array numbers com outra array.
+
+        const name = 'Vitor'
+
+        console.log(...name, 'name')
+
+        function sum(firstNumber, secondNumber) {
+            return firstNumber + secondNumber
+        }
+
+        const number = [1, 2]
+
+        console.log(sum(...number)) //Utilizando Spread operator para passagem de parametro.
+
+        //Exemplo usando o Rest operator
+        function multiply(...numbers) {  //utilizaado normalmente para parametro de uma função
+            const arr = numbers.map(number => number * 2)
+            return arr
+        }
+
+        console.log(multiply(1, 2, 3, 4, 5)) //posso multiplo parametros sem precisar definir quantos são usando o rest operator.
+
+        console.log(multiply(...numbers)) //posso usar o Spread operator como parametro dessa function.
+
+        //Usando o Spread operator para interar as propriedades do objeto
+        object1 = {
+            name: "object1"
+        };
+
+        object2 = {
+            color: "red"
+        };
+
+        joinObjects = { ...object1, ...object2 };
+
+        console.log("objects", joinObjects);
+
+        //Caso tenha propriedade do mesmo nome, o objeto ficará com o valor do ultimo objeto
+        object3 = {
+            name:"nome1"
+        }
+
+        object4 = {
+            name:"agora o nome vai ser esse"
+        }
+
+        joinObjects = {...object3,...object4}
+
+        console.log("objects",joinObjects)
+
+        joinObjects = {...object4,...object3}
+
+        console.log("objects",joinObjects)
+
+        //Posso usar para adicionar direto todas as propriedades de um objeto dentro do objeto
+        objects5 = {
+            ...object2,
+            teste:"testando objeto dentro do objeto"
+        }
+
+        console.log("Objects",objects5)
+    </script>
+</body>
+
+</html>

@@ -16,7 +16,7 @@
         }
 
 
-        const nomeCompleto = `Meu nome é ${person.name} ${person.lastName}`
+        const nomeCompleto = `Meu nome é ${person.name} ${person.lastName}` //Interpolação pode ser usado para escrever uma string com funções, variaveis e afins dentro.
         console.log(nomeCompleto)
 
         const courses = ['Javascript','Java','Ruby','Go']
@@ -24,7 +24,7 @@
         const tagTemplate = `
             <ul>
                 ${
-                    courses.map(courses => `<li>${courses}</li>`).join(' ')
+                    courses.map(courses => `<li>${courses}</li>`).join(' ') //Join é usado para tirar a /,/ do array na hora de fazer a lista
                 }
             </ul>
         `

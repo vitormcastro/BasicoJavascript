@@ -9,7 +9,7 @@
 <body>
     <button class="btn" type="button">Click me</button>
     <script>
-        const btn = document.querySelector('.btn') //QuerySelector pega o primeiro componente que estiver na página.
+        const btn = document.querySelector('.btn') //QuerySelector pega o primeiro componente que estiver na página, caso seja utilizado o QuerySelectorAll, ele pega todos os elementos.
         btn.addEventListener('click',function(event){
             console.log(this)
         })

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        //Utilizando forma de encontra valores dentro de um array
+        const numbers = [0,1,2,3,4,5,6]
+
+        const findNumber = numbers.find(number => number > 2) //Find encontrar o valor que bata com a expressão que colocamos, mas apenas o primeiro valor, se tiver mais de um, ele devolverá apenas o primeiro.
+        console.log(findNumber)
+
+        const findNumberFalseSentence = numbers.find(number => number > 8) //caso nenhum dos valores seja encontrado pela expressão do Find, ele devolverá undefined
+        console.log(findNumberFalseSentence)
+
+        const findIndexNumber = numbers.findIndex(number => number >4) //FindIndex encontra a posição do array que bata com a expressão que colocamos, mas devolve a primeira posição, igual o Find.
+        console.log(findIndexNumber)
+
+        const findIndexNumberFalseSentence = numbers.findIndex(number => number >10) //Caso nenhum dos valores seja encontrado pela expressão do FindIndex, ele devolverá -1
+        console.log(findIndexNumberFalseSentence)
+
+        //Caso queiremos buscar um valor especifico, podemos usar o Includes, se o valor que procuramos exista, ele retornará true, caso contrario, false.
+        const includeNumber = numbers.includes(3) 
+        console.log(includeNumber)
+
+        const includeNumberFalseSentence = numbers.includes(8)
+        console.log(includeNumberFalseSentence)
+
+    </script>
+</body>
+</html>
