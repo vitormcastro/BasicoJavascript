@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>        
+        //Promises são usadas para quando você precisa rodar algo paralelamente, podendo executar tudo paralelamente ao sistema.
+        const repository = fetch('https://api.github.com/users/vitormcastro/repos?per_page=50')
+        let r;
+        repository
+            .then(resp => resp.json()) //Quando a resposta vier, o .then irá pegar essa resposta e você poderá trabalhar ela.
+            .then(response => { // Você pode ter quantos .then você precise, porém lembresse que tem que passar o valor para o proximo then.
+                console.log(response)
+                r = response
+            })
+            .catch(err => console.log(err)) // .catch é para caso de erro sua chamada.
+
+        // Cuidado com uso de variaveis externa a promise, pois o código irá rodar normalmente, ignorando o tempo de resposta da promises, caso ela não tenha ainda retornado o valor e sua variavel tenha sido chamado pelo código, ela terá o valor de undefined.
+        console.log('r',r)
+    </script>
+</body>
+</html>

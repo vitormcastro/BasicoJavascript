@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    <script>
+        // Classe funciona parecido com das linguagem compiladas, a diferença que seu construtor é sempre obrigado a ser implementado.
+        class Person { 
+            constructor(name) {
+                this.name = name
+            }
+
+            hello() {
+                console.log(`Welcome ${this.name}`)
+            }
+        }
+
+        // Caso queira herdar alguma classe, você só precisa escrever na frente do nome da classe /extends/ e a classe que ela herda.
+        class Age extends Person { 
+            constructor (name, age){
+                super(name) //No construtor, você é obrigado a colocar o super junto de todos os parametros da classe pai.
+                //this.name = name Essa linha as vezes não será necessária, porém alguns navegadores ainda não tem esse conceito, fazendo que o /name/ não tenha seu valor adicionado.
+                this.age = age
+            }
+
+            showAge() {
+                console.log(`Hello ${this.name} your age is: ${this.age}`)
+            }
+        }
+
+        const vitor = new Person('Vitor')
+        console.log(vitor)
+        const vitorAge = new Age('Vitor', '26')
+        console.log(vitorAge)
+        vitor.hello()
+        vitorAge.showAge()
+    </script>
+</body>
+</html>

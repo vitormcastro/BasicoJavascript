@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await</title>
+</head>
+<body>
+    <script>
+        // Tem a mesma ideia do promise, porém ele tem o comando de esperar a linha responder para continuar o código.
+        async function getRepository(){ // Async serve para falar que essa função é assincrona
+            const repository = await fetch('https://api.github.com/users/vitormcastro/repos?per_page=50') // Await para esperar esse comando responder antes de continuar
+            const data = await repository.json()
+            console.log(data)
+        }
+
+        // O metodo irá rodar paralelamente ao código, por tenha o mesmo cuidado que vocÊ tem com a Promise, terá que ter aqui, pois o metodo irá rodar paralelamente enquanto o resto irá continuar rodando como se essa função não existisse.
+        getRepository()
+        console.log("quem veio primeiro")
+    </script>
+</body>
+</html>
